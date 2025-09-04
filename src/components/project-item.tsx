@@ -22,10 +22,8 @@ const Project: React.FC<{
   title,
   subtitle,
   description,
-
   techs,
   role,
-  achievements,
   onOpenPhotoLightBox,
 }) => {
   return (
