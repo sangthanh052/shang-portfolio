@@ -109,18 +109,27 @@ function Main() {
         <div className="lg:col-span-7 py-20 max-lg:pb-20 overflow-y-auto scroll-smooth-thin">
           {/* about */}
           <div ref={aboutRef} className="mb-10">
-            <div className="p-6 flex gap-2 items-center" ref={about}>
-              <span className="c1">01.</span> About me{" "}
-              <motion.div
-                animate={{ rotate: [0, 15, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 1.5,
-                  ease: "easeInOut",
-                }}
-              >
-                👋
-              </motion.div>
+            <div
+              className="p-6 flex items-center flex-row-reverse gap-6"
+              ref={about}
+            >
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="flex items-center whitespace-nowrap">
+                <span className="c1">01.</span>{" "}
+                <span className="text-6xl font-extrabold">
+                  About me<span className="text-primary">.</span>
+                </span>
+                {/* <motion.div
+                  animate={{ rotate: [0, 15, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.5,
+                    ease: "easeInOut",
+                  }}
+                >
+                  👋
+                </motion.div> */}
+              </div>
             </div>
 
             <About />
@@ -128,8 +137,14 @@ function Main() {
 
           {/* exp */}
           <div ref={expRef} className="mb-10">
-            <div className="p-3 md:p-6" ref={exp}>
-              <span className="c1">02.</span> Where I've worked
+            <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="flex items-center whitespace-nowrap">
+                <span className="c1">02.</span>{" "}
+                <span className="text-6xl font-extrabold">
+                  Work experience<span className="text-primary">.</span>
+                </span>
+              </div>
             </div>
 
             <Companies />
@@ -137,11 +152,21 @@ function Main() {
 
           {/* projects */}
           <div ref={projectRef}>
-            <div className="p-3 md:p-6" ref={project}>
-              <span className="c1">03.</span> Projects I've participated in{" "}
+            <div
+              className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
+              ref={project}
+            >
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="flex items-center whitespace-nowrap">
+                <span className="c1">03.</span>{" "}
+                <span className="text-6xl font-extrabold">
+                  Projects<span className="text-primary">.</span>
+                </span>
+              </div>
+              {/* <span className="c1">03.</span> Projects I've participated in{" "}
               <span className="italic text-muted-foreground font-thin">
                 (some projects cannot be disclosed due to privacy policies)
-              </span>
+              </span> */}
             </div>
 
             <Projects />
@@ -149,8 +174,18 @@ function Main() {
 
           {/* side projects */}
           <div ref={sideProjectRef} className="">
-            <div className="p-3 md:p-6" ref={sideProject}>
-              <span className="c1">04.</span> Side Projects I’ve Built
+            <div
+              className="p-3 md:p-6 flex items-center  gap-6"
+              ref={sideProject}
+            >
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="flex items-center whitespace-nowrap">
+                <span className="c1">04.</span>{" "}
+                <span className="text-6xl font-extrabold">
+                  Side Projects
+                  <span className="text-primary">.</span>
+                </span>
+              </div>
             </div>
 
             <SideProjects />

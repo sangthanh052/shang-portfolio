@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import LoadingBar from "react-top-loading-bar";
+import Header from "./header";
 import RootLayout from "./root-layout";
 import Surface from "./surface";
 
@@ -27,6 +28,7 @@ const MainLayout: React.FC<{ children: ReactNode; hideProgress?: boolean }> = ({
 
   return (
     <RootLayout>
+      <Header />
       <main
         className="relative bg-pane"
         style={{ backgroundSize: "55px 45px" }}
@@ -38,7 +40,7 @@ const MainLayout: React.FC<{ children: ReactNode; hideProgress?: boolean }> = ({
             <LoadingBar
               color="var(--primary)"
               progress={pagePercent}
-              shadow={false}
+              shadow={true}
               waitingTime={10000000}
               loaderSpeed={0}
             />
