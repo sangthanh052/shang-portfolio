@@ -1,3 +1,4 @@
+import { FlipWords } from "@/components/ui/flip-words";
 import { Reveal } from "@/components/ui/reveal";
 import DOMPurify from "dompurify";
 import { motion } from "framer-motion";
@@ -13,6 +14,7 @@ import ShortAnEmailBtn from "../components/short-an-email-btn";
 import SideProjects from "../components/side-projects";
 import SocialList from "../components/social-list";
 import { bio, name, role, skills } from "../content.json";
+
 function Main() {
   const about = useRef<HTMLDivElement | null>(null);
   const exp = useRef<HTMLDivElement | null>(null);
@@ -63,6 +65,9 @@ function Main() {
     }),
     [bio],
   );
+
+  const words = ["SangNguyen", "ShangDev"];
+
   return (
     <Layout>
       <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -121,7 +126,12 @@ function Main() {
 
           <Reveal>
             <div className="t5 text-muted-foreground/40">
-              Designed & Developed by Shang
+              Designed & Developed by
+              <FlipWords
+                duration={1000}
+                className="text-primary font-semibold"
+                words={words}
+              />
             </div>
           </Reveal>
         </div>
@@ -129,12 +139,12 @@ function Main() {
         <div className="lg:col-span-7 py-20 max-lg:pb-20 overflow-y-auto scroll-smooth-thin">
           {/* about */}
           <div ref={aboutRef} className="mb-10">
-            <Reveal>
-              <div
-                className="p-6 flex items-center flex-row-reverse gap-6"
-                ref={about}
-              >
-                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+            <div
+              className="p-6 flex items-center flex-row-reverse gap-6"
+              ref={about}
+            >
+              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
+              <Reveal>
                 <div className="flex items-center whitespace-nowrap">
                   <span className="c1">01.</span>
                   <span className="text-6xl font-extrabold">
@@ -151,8 +161,8 @@ function Main() {
                   👋
                 </motion.div> */}
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
 
             <About />
           </div>
@@ -160,7 +170,7 @@ function Main() {
           {/* exp */}
           <div ref={expRef} className="mb-10">
             <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
               <Reveal>
                 <div className="flex items-center whitespace-nowrap">
                   <span className="c1">02.</span>
@@ -180,7 +190,7 @@ function Main() {
               className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
               ref={project}
             >
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
               <Reveal>
                 <div className="flex items-center whitespace-nowrap">
                   <span className="c1">03.</span>
@@ -204,7 +214,7 @@ function Main() {
               className="p-3 md:p-6 flex items-center  gap-6"
               ref={sideProject}
             >
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
               <Reveal>
                 <div className="flex items-center">
                   <span className="c1">04.</span>
