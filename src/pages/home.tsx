@@ -159,41 +159,41 @@ function Main() {
 
           {/* exp */}
           <div ref={expRef} className="mb-10">
-            <Reveal>
-              <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
-                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+            <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <Reveal>
                 <div className="flex items-center whitespace-nowrap">
                   <span className="c1">02.</span>
                   <span className="text-6xl font-extrabold">
                     Experience<span className="text-primary">.</span>
                   </span>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
 
             <Companies />
           </div>
 
           {/* projects */}
           <div ref={projectRef}>
-            <Reveal>
-              <div
-                className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
-                ref={project}
-              >
-                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+            <div
+              className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
+              ref={project}
+            >
+              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+              <Reveal>
                 <div className="flex items-center whitespace-nowrap">
                   <span className="c1">03.</span>
                   <span className="text-6xl font-extrabold">
                     Projects<span className="text-primary">.</span>
                   </span>
                 </div>
-                {/* <span className="c1">03.</span> Projects I've participated in
+              </Reveal>
+              {/* <span className="c1">03.</span> Projects I've participated in
               <span className="italic text-muted-foreground font-thin">
                 (some projects cannot be disclosed due to privacy policies)
               </span> */}
-              </div>
-            </Reveal>
+            </div>
 
             <Projects />
           </div>
@@ -205,13 +205,15 @@ function Main() {
               ref={sideProject}
             >
               <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="c1">04.</span>
-                <span className="text-6xl font-extrabold">
-                  Side Projects
-                  <span className="text-primary">.</span>
-                </span>
-              </div>
+              <Reveal>
+                <div className="flex items-center">
+                  <span className="c1">04.</span>
+                  <span className="text-6xl font-extrabold">
+                    Side Projects
+                    <span className="text-primary">.</span>
+                  </span>
+                </div>
+              </Reveal>
             </div>
 
             <SideProjects />

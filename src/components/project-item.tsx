@@ -5,6 +5,7 @@ import List from "./list-item";
 import { ProjectModal } from "./project-modal";
 import Techs from "./techs";
 import ImageLoading from "./ui/image-loading";
+import { Reveal } from "./ui/reveal";
 
 const Project: React.FC<{
   url?: string;
@@ -44,29 +45,38 @@ const Project: React.FC<{
 
           <div className="col-span-full md:col-span-9 mt-0.5">
             <div className="flex flex-col">
-              <a
-                target="_blank"
-                href={rest.url ?? "#"}
-                className="t4 leading-7 font-medium mb-2 lg:group-hover:text-primary duration-100 flex flex-wrap items-center gap-2"
-                aria-label={rest.title}
-              >
-                {rest.title}
-                {rest.subtitle && (
-                  <span className="t5 font-light text-muted-foreground">
-                    ({rest.subtitle})
-                  </span>
-                )}
-              </a>
+              <Reveal once={true}>
+                <a
+                  target="_blank"
+                  href={rest.url ?? "#"}
+                  className="t4 leading-7 font-medium mb-2 lg:group-hover:text-primary duration-100 flex flex-wrap items-center gap-2"
+                  aria-label={rest.title}
+                >
+                  {rest.title}
+                  {rest.subtitle && (
+                    <span className="t5 font-light text-muted-foreground">
+                      ({rest.subtitle})
+                    </span>
+                  )}
+                </a>
+              </Reveal>
+              
+              <Reveal once={true}>
+                {rest.description.map((e, index) => (
+                  <p key={index} className="item-desc">
+                    {e}
+                  </p>
+                ))}
+              </Reveal>
 
-              {rest.description.map((e, index) => (
-                <p key={index} className="item-desc">
-                  {e}
-                </p>
-              ))}
+              <Reveal once={true}>
+                <List label="My Responsibility" data={rest.role} />
+              </Reveal>
 
-              <List label="My Responsibility" data={rest.role} />
               {/* <List label="Achievements" data={achievements} /> */}
-              <Techs techs={rest.techs} />
+              <Reveal once={true}>
+                <Techs techs={rest.techs} />
+              </Reveal>
             </div>
           </div>
         </div>

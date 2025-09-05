@@ -29,7 +29,11 @@ export const Reveal = ({
   }, [isInView, mainControls, slideControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div
+      ref={ref}
+      className="shrink-0"
+      style={{ position: "relative", width, overflow: "hidden" }}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

@@ -12,18 +12,19 @@ const router = createBrowserRouter([
   {
     path: internal.home,
     element: <Home />,
-    errorElement: <NotFound />,
   },
   {
     path: internal.email,
     element: <Email />,
-    errorElement: <NotFound />,
   },
   ...resumePaths.map((path) => ({
     path: path,
     element: <CVRedirect />,
-    errorElement: <NotFound />,
   })),
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 function App() {
