@@ -28,7 +28,7 @@ const ResumeBtn = () => {
       to={internal.cv}
       whileHover={{ scale: 1.05 }}
       target="_blank"
-      className="t5 font-normal text-white px-6 py-3 z-10 relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-linear-to-r from-primary-lighter to-primary-darker focus:ring-0 focus:outline-hidden shadow-lg shadow-primary/40"
+      className="t5 font-normal text-white px-6 py-3 z-10 relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-linear-to-r from-primary to-primary-darker focus:ring-0 focus:outline-hidden shadow-lg shadow-primary/40"
     >
       My Resume
     </Link>
@@ -36,7 +36,7 @@ const ResumeBtn = () => {
 };
 
 const SparklesButton: React.FC<SparklesButtonProps> = ({
-  colors = { first: "var(--primary-lighter)", second: "var(--primary-darker)" },
+  colors = { first: "var(--primary)", second: "var(--primary-darker)" },
   className,
   sparklesCount = 10,
   animationSpeed = 1.5,

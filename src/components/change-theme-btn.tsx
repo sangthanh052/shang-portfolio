@@ -5,13 +5,16 @@ import { memo } from "react";
 import { IoMoon } from "react-icons/io5";
 import { MdSunny } from "react-icons/md";
 import { Button } from "./ui/button";
+import { Reveal } from "./ui/reveal";
 
 const ChangeThemeBtn = memo(() => {
   const { theme, setTheme } = useTheme();
 
   return (
     <div className="t5 text-muted-foreground flex items-center drop-shadow-xl gap-1">
-      <span>Interface theme</span>
+      <Reveal>
+        <span>Interface theme</span>
+      </Reveal>
 
       {/* sun */}
       <Button

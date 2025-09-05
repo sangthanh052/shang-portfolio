@@ -55,7 +55,7 @@
       "time": "Feb 2018 - June 2020",
       "company": "AIxBLOCK Software Solution",
       "url": "https://www.brightsoftsolution.com/",
-      "role": "Full-Stack Developer",
+      "role": "Front-End Developer",
       "description": "",
       "domains": "",
       "job": [
@@ -88,33 +88,25 @@
       "title": "ASICS",
       "subtitle": "US, AEB, JP",
       "role": [
-        "Smart Contract Integration: Designed and implemented smart contracts for presale token purchases.",
-        "Full-Stack Development: Developed a landing page, client dashboard, and admin dashboard using React. Built a Node.js backend server to manage operations, supporting over 4,000 users.",
-        "Supported the pre-sale process, helping the platform raise over $300,000 in funds."
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
       ],
       "description": [
         "Offers over 100 varieties, including black, green, white, herbal, and fruit infusions. In addition to teas, T2 provides a wide selection of teawares such as teapots, cups, and infusers."
       ],
       "achievements": [""],
-      "techs": ["React", "Node.js", "Solidity"]
-    },
-    {
-      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002813/T2-Tea-530x294_zan2m5.jpg",
-      "url": "",
-      "title": "T2 tea",
-      "subtitle": "AU",
-      "role": [
-        "Frontend Development: Developed the mobile UI to enhance UX, implemented OAuth2 authentication with Azure and integrated a custom login/signup template for Azure authentication.",
-        "Backend Integration: Collaborated with the backend team to ensure seamless API integration. Supported and contributed to writing CRUD operations for content management.",
-        "Azure API Research: Researched Azure Portal APIs, authored detailed integration documents for the team, and implemented Azure Pipelines to reduce deployment time."
-      ],
-      "description": [
-        "Offers over 100 varieties, including black, green, white, herbal, and fruit infusions. In addition to teas, T2 provides a wide selection of teawares such as teapots, cups, and infusers."
-      ],
-      "achievements": [
-        "Through this project, I learned the importance of being meticulous and following a multi-step process to ensure accuracy and efficiency. I contributed to writing documentation and researching Azure APIs, improving backend processes. Additionally, I implemented Azure Pipelines, which helped reduce deployment time."
-      ],
-      "techs": ["React Native", "Expo Go", "Azure Portal", "Azure Pipelines"]
+      "techs": [
+        "ReactJS",
+        "Motion",
+        "Bootstrap",
+        "SCSS",
+        "Lodash",
+        "Webpack",
+        "Babel",
+        "Salesforce",
+        "Bazaarvoice Reviews"
+      ]
     },
     {
       "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002740/logo-thuong-hieu-puma-elle-man-7_nfikcb.jpg",
@@ -122,8 +114,9 @@
       "title": "PUMA",
       "subtitle": "PH, US",
       "role": [
-        "Frontend Development: Led the frontend development using React Native and Vue, focusing on UI/UX and real-time video streaming feature. Made sure web and mobile work smoothly together.",
-        "Backend Contribution: Collaborated with client’s backend team to contribute to backend real-time features."
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
       ],
       "description": [
         "An online platform designed to enhance student-teacher interaction through real-time video streaming, improving the overall online learning experience."
@@ -131,24 +124,15 @@
       "achievements": [
         "Through this project, I learned how to work effectively with different teams from different companies, improving collaboration and streamlining workflows."
       ],
-      "techs": ["Vue", "React Native", "Agora SDK", "Zoom SDK", ".NET Core"]
-    },
-    {
-      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002740/7505-3941-a65c00688465ab4fd096babc65aabe62-1350x750_qge4eb.webp",
-      "title": "AEON SPORTS Site",
-      "subtitle": "JP",
-      "description": [
-        "A division of AEON SIGNA Sports United (ASSU), focusing on team sports."
-      ],
-      "role": [
-        "Project Lifecycle Management: Coordinated team members through all phases of the project lifecycle, including planning, development, and deployment.",
-        "Frontend and Mobile Development: Contributed to frontend and mobile development, implementing key features and ensuring smooth UX.",
-        "Collaboration: Worked closely with backend developers and QA teams, providing support where necessary to maintain quality and meet deadlines."
-      ],
-      "achievements": [
-        "In this project, I learned to manage different parts of development, working mostly on my own to handle frontend, backend, and mobile tasks, which helped me gain a big-picture view of the entire development process."
-      ],
-      "techs": ["React", "React Native", "Groovy"]
+      "techs": [
+        "ReactJS",
+        "Tailwind CSS",
+        "SwipperJS",
+        "Webpack",
+        "RESTful APIs",
+        "Bazaarvoice Reviews",
+        "Salesforce"
+      ]
     },
     {
       "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002741/Pandora_Logo_Blank_dysxlu.jpg",
@@ -158,39 +142,87 @@
         "My role here involves building the UI. This is an education platform where students can select both their preferred instructors and the lectures they want"
       ],
       "role": [
-        "Project Lifecycle Management: Coordinated team members through all phases of the project lifecycle, including planning, development, and deployment.",
-        "Frontend and Mobile Development: Contributed to frontend and mobile development, implementing key features and ensuring smooth UX.",
-        "Collaboration: Worked closely with backend developers and QA teams, providing support where necessary to maintain quality and meet deadlines."
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
       ],
       "achievements": [
         "In this project, I learned to manage different parts of development, working mostly on my own to handle frontend, backend, and mobile tasks, which helped me gain a big-picture view of the entire development process."
       ],
-      "techs": ["React", "React Native", "Groovy"]
+      "techs": ["ReactJS", "Chakra UI", "Motion", "RESTful APIs", "Salesforce"]
     },
+
     {
-      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757001485/images_iuh7lr.png",
+      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757057355/laura-mercier_bn_m_vi1yvz.jpg",
       "title": "Laura Mercier",
       "subtitle": "HK, US",
-      "description": [
-        "Offering a wide range of makeup and skincare products."
-      ],
+      "description": ["Offering a wide range of makeup and skincare products."],
       "role": [
-        "Project Lifecycle Management: Coordinated team members through all phases of the project lifecycle, including planning, development, and deployment.",
-        "Frontend and Mobile Development: Contributed to frontend and mobile development, implementing key features and ensuring smooth UX.",
-        "Collaboration: Worked closely with backend developers and QA teams, providing support where necessary to maintain quality and meet deadlines."
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
       ],
       "achievements": [
         "In this project, I learned to manage different parts of development, working mostly on my own to handle frontend, backend, and mobile tasks, which helped me gain a big-picture view of the entire development process."
       ],
-      "techs": ["React", "React Native", "Groovy"]
+      "techs": [
+        "ReactJS",
+        "SCSS",
+        "SwipperJS",
+        "Motion",
+        "RESTful APIs",
+        "Salesforce"
+      ]
+    },
+    {
+      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002813/T2-Tea-530x294_zan2m5.jpg",
+      "url": "",
+      "title": "T2 tea",
+      "subtitle": "AU",
+      "role": [
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
+      ],
+      "description": [
+        "Offers over 100 varieties, including black, green, white, herbal, and fruit infusions. In addition to teas, T2 provides a wide selection of teawares such as teapots, cups, and infusers."
+      ],
+      "achievements": [
+        "Through this project, I learned the importance of being meticulous and following a multi-step process to ensure accuracy and efficiency. I contributed to writing documentation and researching Azure APIs, improving backend processes. Additionally, I implemented Azure Pipelines, which helped reduce deployment time."
+      ],
+      "techs": [
+        "Salesforce",
+        "SCSS",
+        "SwipperJS",
+        "jQueryUI",
+        "Bazaarvoice Reviews",
+        "RESTful APIs"
+      ]
+    },
+    {
+      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757002740/7505-3941-a65c00688465ab4fd096babc65aabe62-1350x750_qge4eb.webp",
+      "title": "AEON SPORTS Site",
+      "subtitle": "JP",
+      "description": [
+        "A division of AEON SIGNA Sports United (ASSU), focusing on team sports."
+      ],
+      "role": [
+        "Developed interfaces as per specifications",
+        "Utilized Axios for API calls",
+        "Writing unit test"
+      ],
+      "achievements": [
+        "In this project, I learned to manage different parts of development, working mostly on my own to handle frontend, backend, and mobile tasks, which helped me gain a big-picture view of the entire development process."
+      ],
+      "techs": ["Salesforce", "SCSS", "SwipperJS", "QueryUI", "RESTful APIs"]
     }
   ],
   "sides": [
     {
       "url": "https://www.shangdev.io.vn",
       "title": "Personal Portfolio Website",
-      "image": "https://res.cloudinary.com/dm214rrp8/image/upload/v1742476414/ph9qvavzri0lcxu5deyd.png",
-      "demo": "https://res.cloudinary.com/dm214rrp8/image/upload/v1742478064/t7wjxfihkfagrmv9iewk.gif",
+      "image": "https://res.cloudinary.com/dnv0qa5lj/image/upload/v1757062080/side_project_-_Made_with_Clipchamp_ircbb9.gif",
+      "subtitle": "",
       "description": [
         "A responsive portfolio website built with React and Tailwind CSS, showcasing my projects and skills. Designed to deliver a smooth user experience on both desktop and mobile devices.",
         "Achieved a Performance score of over 90 on Google PageSpeed Insights."
@@ -199,9 +231,8 @@
         "Responsive Design: Optimized for all screen sizes with Tailwind CSS, providing an engaging experience on both desktop and mobile.",
         "Deployed with Vercel: Hosted on Vercel and automatic updates with every Git commit."
       ],
-      "techs": ["React", "Tailwind CSS", "Shadcn"],
-      "objective": "Create a responsive and visually appealing website to showcase my projects, skills, and experience.",
-      "repo": "https://github.com/cngvc/joes-portfolio"
+      "techs": ["ReactJS", "Tailwind CSS", "Shadcn", "MagicUI", "Motion"],
+      "repo": "https://github.com/sangthanh052/shangdev-portfolio"
     }
   ]
 }

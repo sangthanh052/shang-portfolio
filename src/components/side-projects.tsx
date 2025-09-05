@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import { sides } from "../content.json";
 import SideProject from "./side-project";
 
-const images = sides.map((e) => `${e.demo}`);
+const images = sides.map((e) => `${e.image}`);
 
 const SideProjects = () => {
   const [isOpenLightBox, $isOpenLightBox] = useState(false);

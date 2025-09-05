@@ -8,6 +8,7 @@ const images = projects.map((e) => e.image);
 const Projects = () => {
   const [isOpenLightBox, $isOpenLightBox] = useState(false);
   const [selectedImageIndex, $selectedImage] = useState(0);
+
   return (
     <>
       <Suspense fallback={<div />}>
@@ -20,18 +21,20 @@ const Projects = () => {
 
       <ol className="gap-2 overflow-hidden list-none group/list">
         {projects.map((e, index) => (
-          <li
-            key={index}
-            className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100"
-          >
-            <Project
-              {...e}
-              onOpenPhotoLightBox={() => {
-                $isOpenLightBox((cur) => !cur);
-                $selectedImage(index);
-              }}
-            />
-          </li>
+          <>
+            <li
+              key={index}
+              className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100"
+            >
+              <Project
+                {...e}
+                onOpenPhotoLightBox={() => {
+                  $isOpenLightBox((cur) => !cur);
+                  $selectedImage(index);
+                }}
+              />
+            </li>
+          </>
         ))}
       </ol>
     </>

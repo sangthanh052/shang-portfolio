@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/reveal";
 import DOMPurify from "dompurify";
 import { motion } from "framer-motion";
 import { useMemo, useRef } from "react";
@@ -68,58 +69,79 @@ function Main() {
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="lg:col-span-5 p-4 lg:h-screen lg:sticky top-0 flex flex-col gap-4 lg:w-11/12 lg:pt-10 lg:pb-5 overflow-y-auto scroll-smooth-thin">
           <div className="flex flex-col gap-2.5">
-            <p className="c1">Hi, I am</p>
-            <div className="marker-variation">
-              <h2 dangerouslySetInnerHTML={sanitizedContent}></h2>
-            </div>
-            <p className="t4" dangerouslySetInnerHTML={sanitizedRole} />
-            <p className="t5" dangerouslySetInnerHTML={sanitizedBio} />
-            <p className="t4 text-primary font-code">{`// ${skills}`}</p>
-          </div>
-
-          <div className="flex flex-col gap-2 w-max">
-            {menu.map((e) => (
-              <div
-                key={e.index}
-                className="t4 cursor-pointer"
-                onClick={() => {
-                  console.log(e.ref.current);
-                  e.ref.current?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.025 }}
-                  animate={{ opacity: e.point ? 1 : 0.5 }}
-                >
-                  <span className="c1">{e.index}</span> {e.label}
-                </motion.div>
+            <Reveal>
+              <p className="c1">Hi, I am</p>
+            </Reveal>
+            <Reveal>
+              <div className="marker-variation">
+                <h2 dangerouslySetInnerHTML={sanitizedContent}></h2>
               </div>
-            ))}
+            </Reveal>
+            <Reveal>
+              <p className="t4" dangerouslySetInnerHTML={sanitizedRole} />
+            </Reveal>
+            <Reveal>
+              <p className="t5" dangerouslySetInnerHTML={sanitizedBio} />
+            </Reveal>
+            <Reveal>
+              <p className="t4 text-primary font-code">{`// ${skills}`}</p>
+            </Reveal>
           </div>
-          <SparklesButton />
-          <SocialList />
-          <ShortAnEmailBtn />
+          <Reveal>
+            <div className="flex flex-col gap-2 w-max">
+              {menu.map((e) => (
+                <div
+                  key={e.index}
+                  className="t4 cursor-pointer"
+                  onClick={() => {
+                    console.log(e.ref.current);
+                    e.ref.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.025 }}
+                    animate={{ opacity: e.point ? 1 : 0.5 }}
+                  >
+                    <span className="c1">{e.index}</span> {e.label}
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal>
+            <SparklesButton />
+          </Reveal>
+          <Reveal>
+            <SocialList />
+          </Reveal>
+          <Reveal>
+            <ShortAnEmailBtn />
+          </Reveal>
+
           <ChangeThemeBtn />
 
-          <div className="t5 text-muted-foreground/40">
-            Designed & Developed by Shang
-          </div>
+          <Reveal>
+            <div className="t5 text-muted-foreground/40">
+              Designed & Developed by Shang
+            </div>
+          </Reveal>
         </div>
 
         <div className="lg:col-span-7 py-20 max-lg:pb-20 overflow-y-auto scroll-smooth-thin">
           {/* about */}
           <div ref={aboutRef} className="mb-10">
-            <div
-              className="p-6 flex items-center flex-row-reverse gap-6"
-              ref={about}
-            >
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="c1">01.</span>{" "}
-                <span className="text-6xl font-extrabold">
-                  About me<span className="text-primary">.</span>
-                </span>
-                {/* <motion.div
+            <Reveal>
+              <div
+                className="p-6 flex items-center flex-row-reverse gap-6"
+                ref={about}
+              >
+                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+                <div className="flex items-center whitespace-nowrap">
+                  <span className="c1">01.</span>
+                  <span className="text-6xl font-extrabold">
+                    About me<span className="text-primary">.</span>
+                  </span>
+                  {/* <motion.div
                   animate={{ rotate: [0, 15, 0] }}
                   transition={{
                     repeat: Infinity,
@@ -129,45 +151,50 @@ function Main() {
                 >
                   👋
                 </motion.div> */}
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             <About />
           </div>
 
           {/* exp */}
           <div ref={expRef} className="mb-10">
-            <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="c1">02.</span>{" "}
-                <span className="text-6xl font-extrabold">
-                  Work experience<span className="text-primary">.</span>
-                </span>
+            <Reveal>
+              <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
+                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+                <div className="flex items-center whitespace-nowrap">
+                  <span className="c1">02.</span>
+                  <span className="text-6xl font-extrabold">
+                    Experience<span className="text-primary">.</span>
+                  </span>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             <Companies />
           </div>
 
           {/* projects */}
           <div ref={projectRef}>
-            <div
-              className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
-              ref={project}
-            >
-              <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
-              <div className="flex items-center whitespace-nowrap">
-                <span className="c1">03.</span>{" "}
-                <span className="text-6xl font-extrabold">
-                  Projects<span className="text-primary">.</span>
-                </span>
-              </div>
-              {/* <span className="c1">03.</span> Projects I've participated in{" "}
+            <Reveal>
+              <div
+                className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
+                ref={project}
+              >
+                <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
+                <div className="flex items-center whitespace-nowrap">
+                  <span className="c1">03.</span>
+                  <span className="text-6xl font-extrabold">
+                    Projects<span className="text-primary">.</span>
+                  </span>
+                </div>
+                {/* <span className="c1">03.</span> Projects I've participated in
               <span className="italic text-muted-foreground font-thin">
                 (some projects cannot be disclosed due to privacy policies)
               </span> */}
-            </div>
+              </div>
+            </Reveal>
 
             <Projects />
           </div>
@@ -180,7 +207,7 @@ function Main() {
             >
               <div className="w-full h-[1px] bg-[#ebecfc] opacity-30"></div>
               <div className="flex items-center whitespace-nowrap">
-                <span className="c1">04.</span>{" "}
+                <span className="c1">04.</span>
                 <span className="text-6xl font-extrabold">
                   Side Projects
                   <span className="text-primary">.</span>
