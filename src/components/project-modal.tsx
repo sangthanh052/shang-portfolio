@@ -5,6 +5,7 @@ import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import List from "./list-item";
+import { BackgroundGradient } from "./ui/background-gradient";
 
 interface Props {
   isOpen: boolean;
@@ -34,79 +35,81 @@ export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
 
   const content = (
     <div
-      className="fixed text-foreground z-50 inset-0 h-dvh px-5 py-16 bg-background/30 backdrop-blur-md overflow-y-scroll flex justify-center"
+      className="fixed text-foreground z-50 inset-0 px-5 py-16 bg-background/30 backdrop-blur-md overflow-y-scroll flex justify-center"
       onClick={() => rest.setIsOpen(false)}
     >
-      <button className="top-3 right-3 absolute text-2xl">
-        <MdClose />
-      </button>
+      <BackgroundGradient className="">
+        <button className="top-3 right-3 absolute text-2xl">
+          <MdClose />
+        </button>
 
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        onClick={(e) => e.stopPropagation()}
-        className="max-w-2xl h-fit rounded-2xl overflow-hidden bg-primary-foreground shadow-[0_5px_15px_rgba(0,0,0,0.1)]"
-      >
-        <div className="rounded-2xl outline-1">
-          <img
-            src={rest.image}
-            alt={`An image of the ${rest.title} project.`}
-            width={500}
-            height={400}
-            className="w-full"
-          />
-        </div>
-        {/* <img
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          onClick={(e) => e.stopPropagation()}
+          className="max-w-2xl h-fit rounded-3xl overflow-hidden bg-primary-foreground shadow-[0_5px_15px_rgba(0,0,0,0.1)]"
+        >
+          <div className="border-b border-primary">
+            <img
+              src={rest.image}
+              alt={`An image of the ${rest.title} project.`}
+              width={500}
+              height={400}
+              className="w-full"
+            />
+          </div>
+          {/* <img
           className={styles.modalImage}
           src={imgSrc}
           alt={`An image of the ${title} project.`}
         /> */}
-        <div className="p-6">
-          <h4 className="text-4xl font-bold">
-            {rest.title} ({rest.subtitle})
-          </h4>
+          <div className="px-6 py-8">
+            <h4 className="text-4xl font-bold"> 
+              {rest.title} ({rest.subtitle})
+            </h4>
 
-          <div className=" text-primary my-3">{rest.techs.join(" - ")}</div>
+            <div className=" text-primary my-3">{rest.techs.join(" - ")}</div>
 
-          {rest.description.map((e, index) => (
-            <div key={index} className="text-base mb-3">
-              {e}
+            {rest.description.map((e, index) => (
+              <div key={index} className="text-base mb-3">
+                {e}
+              </div>
+            ))}
+
+            <div className="text-base flex-col flex gap-3">
+              <List
+                label="My Responsibility"
+                className="text-foreground"
+                data={rest.role || rest.features}
+              />
             </div>
-          ))}
 
-          <div className="text-base flex-col flex gap-3">
-            <List
-              label="My Responsibility"
-              className="text-foreground"
-              data={rest.role || rest.features}
-            />
-          </div>
-
-          <div className="mt-6">
-            <p className="text-2xl font-bold">
-              Project Links<span className="text-primary">.</span>
-            </p>
-            <div className="flex gap-3 mt-3">
-              <Link
-                className="flex items-center gap-1 text-primary"
-                target="_blank"
-                rel="nofollow"
-                to={repo}
-              >
-                <AiFillGithub /> source code
-              </Link>
-              <Link
-                className="flex items-center gap-1 text-primary"
-                target="_blank"
-                rel="nofollow"
-                to={url}
-              >
-                <AiOutlineExport /> live project
-              </Link>
+            <div className="mt-6">
+              <p className="text-2xl font-bold">
+                Project Links<span className="text-primary">.</span>
+              </p>
+              <div className="flex gap-3 mt-3">
+                <Link
+                  className="flex items-center gap-1 text-primary"
+                  target="_blank"
+                  rel="nofollow"
+                  to={repo}
+                >
+                  <AiFillGithub /> source code
+                </Link>
+                <Link
+                  className="flex items-center gap-1 text-primary"
+                  target="_blank"
+                  rel="nofollow"
+                  to={url}
+                >
+                  <AiOutlineExport /> live project
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </BackgroundGradient>
     </div>
   );
 

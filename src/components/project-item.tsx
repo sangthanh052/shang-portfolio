@@ -32,7 +32,7 @@ const Project: React.FC<{
                 src={rest.image}
                 className="w-full h-auto object-contain rounded-md"
                 onClick={(e) => {
-                  e.preventDefault();
+                  e.stopPropagation();
                   onOpenPhotoLightBox?.();
                 }}
                 alt={rest.title}

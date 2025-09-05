@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Techs = ({ techs }: { techs: string[] }) => {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 mt-4">
       {techs.map((tech, index) => (
         <motion.div
           key={index}
