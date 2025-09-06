@@ -1,232 +1,59 @@
-import { FlipWords } from "@/components/ui/flip-words";
-import { Reveal } from "@/components/ui/reveal";
-import DOMPurify from "dompurify";
-import { motion } from "framer-motion";
-import { useMemo, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+import Herro from "@/components/hero";
+import SectionSpy from "@/components/scroll-spy";
+import SectionHeading from "@/components/section-heading";
+
+import { useRef, useState } from "react";
 import About from "../components/about";
-import ChangeThemeBtn from "../components/change-theme-btn";
 import Companies from "../components/companies";
 import Layout from "../components/main-layout";
 import Projects from "../components/projects";
-import SparklesButton from "../components/resume-btn";
-import ShortAnEmailBtn from "../components/short-an-email-btn";
 import SideProjects from "../components/side-projects";
-import SocialList from "../components/social-list";
-import { bio, name, role, skills } from "../content.json";
+import { menubar } from "../constants/menubar";
 
 function Main() {
-  const about = useRef<HTMLDivElement | null>(null);
-  const exp = useRef<HTMLDivElement | null>(null);
-  const project = useRef<HTMLDivElement | null>(null);
-  const sideProject = useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = useState("home");
 
-  const { ref: aboutRef, inView: aboutPoint } = useInView();
-  const { ref: expRef, inView: experiencePoint } = useInView();
-  const { ref: projectRef, inView: projectPoint } = useInView();
-  const { ref: sideProjectRef, inView: sideProjectPoint } = useInView();
-
-  const menu = useMemo(() => {
-    return [
-      { ref: about, point: aboutPoint, index: "01", label: "🤔 about" },
-      { ref: exp, point: experiencePoint, index: "02", label: "🧑‍💻 experience" },
-      {
-        ref: project,
-        point: projectPoint,
-        index: "03",
-        label: "💻 participated projects",
-      },
-      {
-        ref: sideProject,
-        point: sideProjectPoint,
-        index: "04",
-        label: "💪 personal projects",
-      },
-    ];
-  }, [aboutPoint, experiencePoint, projectPoint, sideProjectPoint]);
-
-  const sanitizedContent = useMemo(
-    () => ({
-      __html: DOMPurify.sanitize(name),
-    }),
-    [name],
-  );
-
-  const sanitizedRole = useMemo(
-    () => ({
-      __html: DOMPurify.sanitize(role),
-    }),
-    [role],
-  );
-
-  const sanitizedBio = useMemo(
-    () => ({
-      __html: DOMPurify.sanitize(bio || ""),
-    }),
-    [bio],
-  );
-
-  const words = ["SangNguyen", "ShangDev"];
+  const menuRefs = {
+    about: useRef<HTMLDivElement>(null),
+    exp: useRef<HTMLDivElement>(null),
+    project: useRef<HTMLDivElement>(null),
+    personal: useRef<HTMLDivElement>(null),
+  };
 
   return (
     <Layout>
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="lg:col-span-5 p-4 lg:sticky top-0 flex flex-col gap-4 lg:w-11/12 lg:pt-10 lg:pb-5 overflow-y-auto scroll-smooth-thin lg:h-fit">
-          <div className="flex flex-col gap-2.5">
-            <Reveal>
-              <p className="c1">Hi, I am</p>
-            </Reveal>
-            <Reveal>
-              <div className="marker-variation">
-                <h2 dangerouslySetInnerHTML={sanitizedContent}></h2>
-              </div>
-            </Reveal>
-            <Reveal>
-              <p className="t4" dangerouslySetInnerHTML={sanitizedRole} />
-            </Reveal>
-            <Reveal>
-              <p className="t5" dangerouslySetInnerHTML={sanitizedBio} />
-            </Reveal>
-            <Reveal>
-              <p className="t4 text-primary font-code">{`// ${skills}`}</p>
-            </Reveal>
-          </div>
-          <Reveal>
-            <div className="flex flex-col gap-2 w-max">
-              {menu.map((e) => (
-                <div
-                  key={e.index}
-                  className="t4 cursor-pointer"
-                  onClick={() => {
-                    console.log(e.ref.current);
-                    e.ref.current?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.025 }}
-                    animate={{ opacity: e.point ? 1 : 0.5 }}
-                  >
-                    <span className="c1">{e.index}</span> {e.label}
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal>
-            <SparklesButton />
-          </Reveal>
-          <Reveal>
-            <SocialList />
-          </Reveal>
-          <Reveal>
-            <ShortAnEmailBtn />
-          </Reveal>
-
-          <ChangeThemeBtn />
-
-          <Reveal>
-            <div className="t5 text-muted-foreground/40">
-              Designed & Developed by
-              <FlipWords
-                duration={1000}
-                className="text-primary font-semibold"
-                words={words}
-              />
-            </div>
-          </Reveal>
+          <Herro refs={menuRefs} isActive={active} />
         </div>
 
         <div className="lg:col-span-7 py-20 max-lg:pb-20 overflow-y-auto scroll-smooth-thin">
-          {/* about */}
-          <div ref={aboutRef} className="mb-10">
-            <div
-              className="p-6 flex items-center flex-row-reverse gap-6"
-              ref={about}
-            >
-              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
-              <Reveal>
-                <div className="flex items-center whitespace-nowrap">
-                  <span className="c1">01.</span>
-                  <span className="text-6xl font-extrabold">
-                    About me<span className="text-primary">.</span>
-                  </span>
-                  {/* <motion.div
-                  animate={{ rotate: [0, 15, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 1.5,
-                    ease: "easeInOut",
-                  }}
-                >
-                  👋
-                </motion.div> */}
-                </div>
-              </Reveal>
-            </div>
-
-            <About />
+          <div ref={menuRefs.about}>
+            <SectionSpy id={menubar.about} setActive={setActive}>
+              <SectionHeading index="01" title="About me" reverse />
+              <About />
+            </SectionSpy>
           </div>
 
-          {/* exp */}
-          <div ref={expRef} className="mb-10">
-            <div className="p-3 md:p-6 flex items-center gap-6" ref={exp}>
-              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
-              <Reveal>
-                <div className="flex items-center whitespace-nowrap">
-                  <span className="c1">02.</span>
-                  <span className="text-6xl font-extrabold">
-                    Experience<span className="text-primary">.</span>
-                  </span>
-                </div>
-              </Reveal>
-            </div>
-
-            <Companies />
+          <div ref={menuRefs.exp}>
+            <SectionSpy id={menubar.exp} setActive={setActive}>
+              <SectionHeading index="02" title="Experience" />
+              <Companies />
+            </SectionSpy>
           </div>
 
-          {/* projects */}
-          <div ref={projectRef}>
-            <div
-              className="p-3 md:p-6 flex items-center flex-row-reverse gap-6"
-              ref={project}
-            >
-              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
-              <Reveal>
-                <div className="flex items-center whitespace-nowrap">
-                  <span className="c1">03.</span>
-                  <span className="text-6xl font-extrabold">
-                    Projects<span className="text-primary">.</span>
-                  </span>
-                </div>
-              </Reveal>
-              {/* <span className="c1">03.</span> Projects I've participated in
-              <span className="italic text-muted-foreground font-thin">
-                (some projects cannot be disclosed due to privacy policies)
-              </span> */}
-            </div>
-
-            <Projects />
+          <div ref={menuRefs.project}>
+            <SectionSpy id={menubar.project} setActive={setActive}>
+              <SectionHeading index="03" title="Projects" reverse />
+              <Projects />
+            </SectionSpy>
           </div>
 
-          {/* side projects */}
-          <div ref={sideProjectRef} className="">
-            <div
-              className="p-3 md:p-6 flex items-center  gap-6"
-              ref={sideProject}
-            >
-              <div className="w-full h-[1px] bg-foreground opacity-30"></div>
-              <Reveal>
-                <div className="flex items-center">
-                  <span className="c1">04.</span>
-                  <span className="text-6xl font-extrabold">
-                    Side Projects
-                    <span className="text-primary">.</span>
-                  </span>
-                </div>
-              </Reveal>
-            </div>
-
-            <SideProjects />
+          <div ref={menuRefs.personal}>
+            <SectionSpy id={menubar.personal} setActive={setActive}>
+              <SectionHeading index="04" title="Personal projects" />
+              <SideProjects />
+            </SectionSpy>
           </div>
         </div>
       </div>

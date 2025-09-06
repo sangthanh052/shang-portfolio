@@ -21,11 +21,8 @@ const SideProjects = () => {
       </Suspense>
       <ol className="gap-2 overflow-hidden list-none group/list">
         {sides.map((item, index) => (
-          <AnimateInView>
-            <li
-              key={index}
-              className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100"
-            >
+          <AnimateInView key={index}>
+            <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
               <SideProject
                 {...item}
                 onOpenPhotoLightBox={() => {

@@ -22,22 +22,17 @@ const Projects = () => {
 
       <ol className="gap-2 overflow-hidden list-none group/list">
         {projects.map((e, index) => (
-          <>
-            <AnimateInView>
-              <li
-                key={index}
-                className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100"
-              >
-                <Project
-                  {...e}
-                  onOpenPhotoLightBox={() => {
-                    $isOpenLightBox((cur) => !cur);
-                    $selectedImage(index);
-                  }}
-                />
-              </li>
-            </AnimateInView>
-          </>
+          <AnimateInView key={index}>
+            <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
+              <Project
+                {...e}
+                onOpenPhotoLightBox={() => {
+                  $isOpenLightBox((cur) => !cur);
+                  $selectedImage(index);
+                }}
+              />
+            </li>
+          </AnimateInView>
         ))}
       </ol>
     </>

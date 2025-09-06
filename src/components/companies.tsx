@@ -6,11 +6,8 @@ const Companies = () => {
   return (
     <ol className="gap-2 overflow-hidden list-none group/list">
       {companies.map((e, index) => (
-        <AnimateInView>
-          <li
-            key={index}
-            className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100"
-          >
+        <AnimateInView key={index}>
+          <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
             <Company {...e} />
           </li>
         </AnimateInView>
