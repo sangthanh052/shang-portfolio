@@ -4,6 +4,7 @@ import Header from "./header";
 import RootLayout from "./root-layout";
 import Surface from "./surface";
 import { ScrollProgress } from "./ui/scroll-progress";
+import Footer from "./footer";
 
 const MainLayout: React.FC<{ children: ReactNode; hideProgress?: boolean }> = ({
   children,
@@ -26,6 +27,7 @@ const MainLayout: React.FC<{ children: ReactNode; hideProgress?: boolean }> = ({
           </div>
         </div>
       </main>
+      <Footer />
     </RootLayout>
   );
 };

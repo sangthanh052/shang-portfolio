@@ -1,6 +1,6 @@
 import { FaEnvelope, FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { externals } from "../urls";
+import { externals } from "../constants/urls";
 import Social from "./social";
 
 const SocialList = () => {

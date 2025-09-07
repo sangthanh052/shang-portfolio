@@ -11,7 +11,7 @@ import emailjs from "@emailjs/browser";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { internal } from "../urls";
+import { internal } from "../constants/urls";
 
 const Email = () => {
   const form = useRef<HTMLFormElement>(null);

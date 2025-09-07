@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 
-import useSanitize from "@/hooks/useSanitize";
 import { menubar } from "@/constants/menubar";
+import { AppContext } from "@/contexts/app.context";
+import useSanitize from "@/hooks/useSanitize";
 import ChangeThemeBtn from "../components/change-theme-btn";
 import SparklesButton from "../components/resume-btn";
 import ShortAnEmailBtn from "../components/short-an-email-btn";
 import SocialList from "../components/social-list";
 import { FlipWords } from "../components/ui/flip-words";
 import { Reveal } from "../components/ui/reveal";
-import { bio, name, role, skills } from "../content.json";
+import { AnimateInView } from "./ui/animate-in-view";
 
 interface propsType {
   refs: {
@@ -22,10 +23,13 @@ interface propsType {
 }
 
 function Herro({ refs, isActive }: propsType) {
-  const sanitizedContent = useSanitize(name);
-  const sanitizedRole = useSanitize(role);
-  const sanitizedBio = useSanitize(bio);
+  const { profile } = useContext(AppContext);
+
+  const sanitizedContent = useSanitize(profile?.name);
+  const sanitizedRole = useSanitize(profile?.role);
+  const sanitizedBio = useSanitize(profile?.bio);
   const words = ["SangNguyen", "ShangDev"];
+
   const menu = useMemo(() => {
     return [
       { ref: refs.about, active: menubar.about, label: "🤔 about" },
@@ -42,6 +46,7 @@ function Herro({ refs, isActive }: propsType) {
       },
     ];
   }, [refs]);
+
   return (
     <>
       <div className="flex flex-col gap-2.5">
@@ -60,7 +65,7 @@ function Herro({ refs, isActive }: propsType) {
           <p className="t5" dangerouslySetInnerHTML={sanitizedBio} />
         </Reveal>
         <Reveal>
-          <p className="t4 text-primary font-code">{`// ${skills}`}</p>
+          <p className="t4 text-primary font-code">{`// ${profile?.skills}`}</p>
         </Reveal>
       </div>
 
@@ -85,9 +90,11 @@ function Herro({ refs, isActive }: propsType) {
           ))}
         </div>
       </Reveal>
-      <Reveal>
+      
+      <AnimateInView>
         <SparklesButton />
-      </Reveal>
+      </AnimateInView>
+
       <Reveal>
         <SocialList />
       </Reveal>

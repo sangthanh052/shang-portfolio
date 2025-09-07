@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./pages/404";
 import CVRedirect from "./pages/cv";
 import Email from "./pages/send-email";
-import { internal } from "./urls";
+import { internal } from "./constants/urls";
 
 const resumePaths = ["/resume", "/cv"];
 const router = createBrowserRouter([

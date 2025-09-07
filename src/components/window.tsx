@@ -14,7 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { externals, internal } from "../urls";
+import { externals, internal } from "../constants/urls";
 
 const content = `/*
   author: Nguyen Thanh Sang (Shang)
@@ -68,7 +68,7 @@ const Window = () => {
           </div>
 
           <div className="flex items-center gap-1">
-            <span className="text-sm leading-normal text-foreground flex items-center font-code p-2 bg-primary/40 rounded-md">
+            <span className="text-xs lg:text-sm leading-normal text-foreground flex items-center font-code p-2 bg-primary/40 rounded-md">
               <span className="text-code-editor-value">{`{{gateway}}`}</span>
               /auth/me
             </span>

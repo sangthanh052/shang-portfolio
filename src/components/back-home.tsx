@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { internal } from "../urls";
+import { internal } from "../constants/urls";
 import { Button } from "./ui/button";
 
 const BackHome = () => {

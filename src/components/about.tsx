@@ -46,8 +46,8 @@ const About = () => {
                 alt="Avatar"
                 src={
                   theme === "dark"
-                    ? "/assets/avatar.png"
-                    : "/assets/avatar-light.png"
+                    ? "/assets/images/avatar.png"
+                    : "/assets/images/avatar-light.png"
                 }
                 className="object-contain w-full h-full"
               />

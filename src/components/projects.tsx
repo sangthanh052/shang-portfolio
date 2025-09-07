@@ -1,14 +1,19 @@
+import { AppContext } from "@/contexts/app.context";
 import FsLightbox from "fslightbox-react";
-import { Suspense, useState } from "react";
-import { projects } from "../content.json";
+import { Suspense, useContext, useMemo, useState } from "react";
 import Project from "./project-item";
 import { AnimateInView } from "./ui/animate-in-view";
 
-const images = projects.map((e) => e.image);
-
 const Projects = () => {
+  const { profile } = useContext(AppContext);
   const [isOpenLightBox, $isOpenLightBox] = useState(false);
   const [selectedImageIndex, $selectedImage] = useState(0);
+
+  const projects = profile?.projects;
+
+  const images = useMemo(() => {
+    return projects?.map((e) => `${e.image}`) ?? [];
+  }, [profile]);
 
   return (
     <>
@@ -21,7 +26,7 @@ const Projects = () => {
       </Suspense>
 
       <ol className="gap-2 overflow-hidden list-none group/list">
-        {projects.map((e, index) => (
+        {projects?.map((e, index) => (
           <AnimateInView key={index}>
             <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
               <Project

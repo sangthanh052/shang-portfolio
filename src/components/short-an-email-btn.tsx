@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { LuMailPlus } from "react-icons/lu";
 import { Link as RLink } from "react-router-dom";
-import { internal } from "../urls";
+import { internal } from "../constants/urls";
 
 const Link = motion.create(RLink);
 
