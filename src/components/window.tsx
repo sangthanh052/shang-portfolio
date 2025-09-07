@@ -17,18 +17,18 @@ import { Link } from "react-router-dom";
 import { externals, internal } from "../constants/urls";
 
 const content = `/*
-  author: Nguyen Thanh Sang (Shang)
-  description: My profile as a Front End Developer
-  homepage: https://shangdev.io.vn
-  repository: https://github.com/sangthanh052/shangdev-portfolio
+  Author: Nguyen Thanh Sang (Shang)
+  Description: My profile as a Front End Developer
+  Homepage: https://shangdev.id.vn
+  Repository: https://github.com/sangthanh052/shangdev-portfolio
 */
 const my_profile: IGoodDeveloper = {
-  fullname: 'Nguyen Thanh Sang (Shang)',
-  title: 'Senior Front-End Developer',
-  yoe: '5+',
-  skills: {
-    languages: ['JavaScript (ES6+)', 'TypeScript', 'Liquid (Shopify)', 'Salesforce (SFRA)'],
-    frontend: [
+  Fullname: 'Nguyen Thanh Sang (Shang)',
+  Title: 'Senior Front-End Developer',
+  Yoe: '5+',
+  Skills: {
+    Languages: ['JavaScript (ES6+)', 'TypeScript', 'Liquid (Shopify)', 'Salesforce (SFRA)'],
+    Frontend: [
       'ReactJS', 'NextJS', 'Redux/Toolkit', 'Context API', 'React Query',
       'React Hook Form', 'Zod/Yup', 'Lodash', 'Immer'
     ],

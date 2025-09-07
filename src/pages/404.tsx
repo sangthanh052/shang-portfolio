@@ -15,8 +15,8 @@ const NotFound = () => {
               alt="Not found"
               src={
                 theme === "dark"
-                  ? "/assets/not-found.png"
-                  : "/assets/not-found-light.png"
+                  ? "/assets/images/not-found.png"
+                  : "/assets/images/not-found-light.png"
               }
               className="max-w-[12rem] w-full h-auto object-contain absolute -translate-y-full z-50"
             />
