@@ -17,7 +17,7 @@ function SectionHeading({ index, title, reverse = false }: propsType) {
       <Reveal>
         <div className="flex items-center whitespace-nowrap">
           <span className="c1">{index}.</span>
-          <span className="text-2xl lg:text-6xl font-extrabold">
+          <span className="text-2xl lg:text-6xl font-extrabold leading-normal">
             {title}
             <span className="text-primary">.</span>
           </span>

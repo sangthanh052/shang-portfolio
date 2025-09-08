@@ -16,7 +16,7 @@ const Company: React.FC<{
   techs: string[];
 }> = ({ time, company, url, role, description, job, domains, techs }) => {
   return (
-    <Card>
+    <Card className="lg:before:fuchsia">
       <div className="grid grid-cols-12 p-3 md:p-6">
         <div className="col-span-12 md:col-span-3">
           <p className="t6 text-muted-foreground md:mt-1">{time}</p>
@@ -31,7 +31,7 @@ const Company: React.FC<{
                 aria-label="Home"
               >
                 {role ? `${role}, ` : ""}
-                <span className="text-normal-primary">{company}</span>
+                <span className="text-normal-primary font-semibold">{company}</span>
               </a>
             </Reveal>
 

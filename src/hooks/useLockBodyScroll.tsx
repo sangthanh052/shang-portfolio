@@ -2,14 +2,15 @@ import { useLayoutEffect } from "react";
 
 export function useLockBodyScroll(lock = true) {
   useLayoutEffect(() => {
-    const originalStyle = window.getComputedStyle(document.body).overflow;
+    const body = document.body;
+    const originalStyle = window.getComputedStyle(body).overflow;
 
     if (lock) {
-      document.body.style.overflow = "hidden"; // chặn scroll
+      body.style.overflow = "hidden"; // chặn scroll
     }
 
     return () => {
-      document.body.style.overflow = originalStyle; // restore lại
+      body.style.overflow = originalStyle; // restore lại
     };
   }, [lock]);
 }

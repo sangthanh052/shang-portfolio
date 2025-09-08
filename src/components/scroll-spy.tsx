@@ -19,7 +19,7 @@ export default function SectionSpy({ id, setActive, children }: PropsType) {
   }, [isInView, id, setActive]);
 
   return (
-    <div ref={ref} className="pt-10">
+    <div ref={ref} className="pt-6">
       {children}
     </div>
   );

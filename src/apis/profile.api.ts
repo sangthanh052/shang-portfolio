@@ -20,12 +20,12 @@ interface Company {
   url?: undefined;
 }
 
-interface Project extends BaseType {
+export interface Project extends BaseType {
   role: string[];
   achievements: string[];
 }
 
-interface Side extends BaseType {
+export interface Side extends BaseType {
   features: string[];
   repo: string;
 }

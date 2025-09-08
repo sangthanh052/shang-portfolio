@@ -7,11 +7,11 @@ const Companies = () => {
   const { profile } = useContext(AppContext);
 
   return (
-    <ol className="gap-2 overflow-hidden list-none group/list">
+    <ol className="gap-2 overflow-hidden list-none py-3">
       {profile &&
         profile.companies.map((e, index) => (
           <AnimateInView key={index}>
-            <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
+            <li className="px-6 py-3">
               <Company {...e} />
             </li>
           </AnimateInView>

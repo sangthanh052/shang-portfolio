@@ -1,19 +1,16 @@
-import { AppContext } from "@/contexts/app.context";
+import { Project, Side } from "@/apis/profile.api";
 import FsLightbox from "fslightbox-react";
-import { Suspense, useContext, useMemo, useState } from "react";
-import SideProject from "./side-project";
+import { Suspense, useMemo, useState } from "react";
+import BaseProjectCard from "./base-project-card";
 import { AnimateInView } from "./ui/animate-in-view";
 
-const SideProjects = () => {
-  const { profile } = useContext(AppContext);
+const BaseProjects = ({ data }: { data: Side[] | Project[] }) => {
   const [isOpenLightBox, $isOpenLightBox] = useState(false);
   const [selectedImageIndex, $selectedImage] = useState(0);
 
-  const sides = profile?.sides;
-
   const images = useMemo(() => {
-    return sides?.map((e) => `${e.image}`) ?? [];
-  }, [profile]);
+    return data?.map((e) => `${e.image}`) ?? [];
+  }, [data]);
 
   return (
     <div>
@@ -24,12 +21,13 @@ const SideProjects = () => {
           sourceIndex={selectedImageIndex}
         />
       </Suspense>
-      <ol className="gap-2 overflow-hidden list-none group/list">
-        {sides?.map((item, index) => (
+
+      <ol className="gap-2 overflow-hidden list-none py-3">
+        {data?.map((item, index) => (
           <AnimateInView key={index}>
-            <li className="lg:hover:opacity-100! lg:group-hover/list:opacity-60 duration-100">
-              <SideProject
-                {...item}
+            <li className="px-6 py-3 cursor-pointer">
+              <BaseProjectCard
+                {...item} //spead bung object thanh nhieu props
                 onOpenPhotoLightBox={() => {
                   $isOpenLightBox((cur) => !cur);
                   $selectedImage(index);
@@ -43,4 +41,4 @@ const SideProjects = () => {
   );
 };
 
-export default SideProjects;
+export default BaseProjects;

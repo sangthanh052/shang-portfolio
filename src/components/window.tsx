@@ -14,44 +14,11 @@ import {
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { profileContent } from "../constants/content";
 import { externals, internal } from "../constants/urls";
 
-const content = `/*
-  Author: Nguyen Thanh Sang (Shang)
-  Description: My profile as a Front End Developer
-  Homepage: https://shangdev.id.vn
-  Repository: https://github.com/sangthanh052/shangdev-portfolio
-*/
-const my_profile: IGoodDeveloper = {
-  Fullname: 'Nguyen Thanh Sang (Shang)',
-  Title: 'Senior Front-End Developer',
-  Yoe: '5+',
-  Skills: {
-    Languages: ['JavaScript (ES6+)', 'TypeScript', 'Liquid (Shopify)', 'Salesforce (SFRA)'],
-    Frontend: [
-      'ReactJS', 'NextJS', 'Redux/Toolkit', 'Context API', 'React Query',
-      'React Hook Form', 'Zod/Yup', 'Lodash', 'Immer'
-    ],
-    APIsAndNetworking: ['RESTful APIs', 'Axios', 'Fetch'],
-    UIAndStyling: [
-      'Tailwind CSS', 'Ant Design', 'ShadcnUI', 'MagicUI',
-      'Chakra UI', 'Bootstrap', 'SCSS Modules', 'Styled Components'],
-    Testing: ['Jest', 'Vitest', 'React Testing Library (RTL)', 'MSW', 'Snapshot Testing'],
-    BuildAndTools: ['Vite', 'Webpack', 'Babel'],
-    VersionControlAndWorkflow: [
-      'Git', 'GitHub', 'Bitbucket',
-      'Agile/Scrum methodologies', 'Jira'
-    ]
-  },
-  Other: [
-    'Design Patterns', 'Atomic Design', 'Mobile-First UI', 'Lazy loading', 'Memoization',
-    'Figma', 'Zeplin', 'Photoshop', 'Illustrator', 'Canva'
-  ]
-  
-};`;
-
 const Window = () => {
-  const [code] = useState(content);
+  const [code] = useState(profileContent);
 
   useEffect(() => {
     Prism.highlightAll();

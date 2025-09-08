@@ -1,5 +1,5 @@
+import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
@@ -12,26 +12,19 @@ interface Props {
   setIsOpen: Function;
   url?: string;
   image?: string;
-  title: string;
+  title?: string;
   subtitle?: string;
-  description: string[];
-  role?: string[] | undefined;
-  features?: string[];
-  achievements?: string[] | undefined;
-  techs: string[];
+  description?: string[];
+  role?: string[]; //project
+  features?: string[]; //personal
+  achievements?: string[]; //project
+  objective?: string[]; //personal
+  techs?: string[];
   repo?: string;
 }
 
 export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
-  useEffect(() => {
-    const body = document.querySelector("body");
-
-    if (rest.isOpen) {
-      body!.style.overflowY = "hidden";
-    } else {
-      body!.style.overflowY = "scroll";
-    }
-  }, [rest.isOpen]);
+  useLockBodyScroll(rest.isOpen);
 
   const content = (
     <div
@@ -58,30 +51,38 @@ export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
               className="w-full"
             />
           </div>
-          {/* <img
-          className={styles.modalImage}
-          src={imgSrc}
-          alt={`An image of the ${title} project.`}
-        /> */}
+
           <div className="px-6 py-8">
-            <h4 className="text-4xl font-bold"> 
-              {rest.title} ({rest.subtitle})
+            <h4 className="text-4xl font-bold">
+              {rest.title || "Project Name"}{" "}
+              {rest.subtitle && `(${rest.subtitle})`}
             </h4>
 
-            <div className=" text-primary my-3">{rest.techs.join(" - ")}</div>
+            <div className=" text-primary my-3">
+              {rest.techs && rest.techs.join(" - ")}
+            </div>
 
-            {rest.description.map((e, index) => (
-              <div key={index} className="text-base mb-3">
-                {e}
-              </div>
-            ))}
+            {rest.description &&
+              rest.description.map((e, index) => (
+                <div key={index} className="text-base mb-3">
+                  {e}
+                </div>
+              ))}
 
-            <div className="text-base flex-col flex gap-3">
-              <List
-                label="My Responsibility"
-                className="text-foreground"
-                data={rest.role || rest.features}
-              />
+            <div className="text-base flex-col flex gap-3 text-foreground">
+              {rest.features && (
+                <List label="Main Features" data={rest.features} />
+              )}
+              {rest.role && <List label="My Responsibility" data={rest.role} />}
+            </div>
+
+            <div className="text-base flex-col flex gap-3 text-foreground">
+              {rest.objective && (
+                <List label="Objective" data={rest.objective} />
+              )}
+              {rest.achievements && (
+                <List label="Achievements" data={rest.achievements} />
+              )}
             </div>
 
             <div className="mt-6">
@@ -95,7 +96,7 @@ export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
                   rel="nofollow"
                   to={repo}
                 >
-                  <AiFillGithub /> source code
+                  <AiFillGithub /> Source code
                 </Link>
                 <Link
                   className="flex items-center gap-1 text-primary"
@@ -103,7 +104,7 @@ export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
                   rel="nofollow"
                   to={url}
                 >
-                  <AiOutlineExport /> live project
+                  <AiOutlineExport /> Live project
                 </Link>
               </div>
             </div>
@@ -112,8 +113,6 @@ export const ProjectModal = ({ repo = "/", url = "/", ...rest }: Props) => {
       </BackgroundGradient>
     </div>
   );
-
-  if (!rest.isOpen) return <></>;
 
   // @ts-ignore
   return ReactDOM.createPortal(content, document.getElementById("root"));
