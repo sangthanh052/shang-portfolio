@@ -4,13 +4,15 @@ import { useContext, useMemo } from "react";
 import { menubar } from "@/constants/menubar";
 import { AppContext } from "@/contexts/app.context";
 import useSanitize from "@/hooks/useSanitize";
+import { Link } from "react-router-dom";
 import ChangeThemeBtn from "../components/change-theme-btn";
-import SparklesButton from "../components/resume-btn";
 import ShortAnEmailBtn from "../components/short-an-email-btn";
 import SocialList from "../components/social-list";
 import { FlipWords } from "../components/ui/flip-words";
 import { Reveal } from "../components/ui/reveal";
 import { AnimateInView } from "./ui/animate-in-view";
+import { AuroraText } from "./ui/aurora-text";
+import { SparklesText } from "./ui/sparkle";
 
 interface propsType {
   refs: {
@@ -25,7 +27,6 @@ interface propsType {
 function Herro({ refs, isActive }: propsType) {
   const { profile } = useContext(AppContext);
 
-  const sanitizedContent = useSanitize(profile?.name);
   const sanitizedRole = useSanitize(profile?.role);
   const sanitizedBio = useSanitize(profile?.bio);
   const words = ["SangNguyen", "ShangDev"];
@@ -54,9 +55,9 @@ function Herro({ refs, isActive }: propsType) {
           <p className="c1">Hi, I am</p>
         </Reveal>
         <Reveal>
-          <div className="marker-variation">
-            <h2 dangerouslySetInnerHTML={sanitizedContent}></h2>
-          </div>
+          <h1 className="marker-variation text-4xl leading-normal">
+            <AuroraText>{profile?.name}</AuroraText>
+          </h1>
         </Reveal>
         <Reveal>
           <p className="t4" dangerouslySetInnerHTML={sanitizedRole} />
@@ -90,9 +91,20 @@ function Herro({ refs, isActive }: propsType) {
           ))}
         </div>
       </Reveal>
-      
+
       <AnimateInView>
-        <SparklesButton />
+        <SparklesText
+          colors={{ first: "var(--primary)", second: "var(--primary-darker)" }}
+          animationSpeed={2}
+        >
+          <Link
+            to=""
+            target="_blank"
+            className="t5 font-normal text-white px-6 py-3 z-10 relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-linear-to-r from-primary to-primary-foreground focus:ring-0 focus:outline-hidden shadow-lg shadow-primary/40"
+          >
+            My Resume
+          </Link>
+        </SparklesText>
       </AnimateInView>
 
       <Reveal>

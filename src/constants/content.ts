@@ -6,7 +6,7 @@ export const profileContent = `/*
 */
 const my_profile: IGoodDeveloper = {
   Fullname: 'Nguyen Thanh Sang (Shang)',
-  Title: 'Senior Front-End Developer',
+  Title: 'Front-End Developer',
   Yoe: '5+',
   Skills: {
     Languages: ['JavaScript (ES6+)', 'TypeScript', 'Liquid (Shopify)', 'Salesforce (SFRA)'],
@@ -16,8 +16,9 @@ const my_profile: IGoodDeveloper = {
     ],
     APIsAndNetworking: ['RESTful APIs', 'Axios', 'Fetch'],
     UIAndStyling: [
-      'Tailwind CSS', 'Ant Design', ' ShadcnUI', 'MagicUI',
-      'Chakra UI', 'Bootstrap', 'SCSS Modules', 'Styled Components'],
+      'Tailwind CSS', 'Ant Design', ' ShadcnUI', 'MagicUI', 'Framer Motion'
+      'Chakra UI', 'Aceternity UI', 'Bootstrap', 'SCSS Modules', 'Styled Components'
+    ],
     Testing: ['Jest', 'Vitest', 'React Testing Library (RTL)', 'MSW', 'Snapshot Testing'],
     BuildAndTools: ['Vite', 'Webpack', 'Babel'],
     VersionControlAndWorkflow: [

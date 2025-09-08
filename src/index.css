@@ -275,7 +275,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  filter: blur(0);
   background: var(
     --rg-shadow-gradient-purple,
     linear-gradient(123deg, #ff1ae0 0%, #8575ff 50%, #00a4bd 100%)

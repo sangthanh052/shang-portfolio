@@ -13,9 +13,18 @@ interface Sparkle {
   delay: number;
   scale: number;
   lifespan: number;
+  animationSpeed?: number;
 }
 
-const Sparkle: React.FC<Sparkle> = ({ id, x, y, color, delay, scale }) => {
+const Sparkle: React.FC<Sparkle> = ({
+  id,
+  x,
+  y,
+  color,
+  delay,
+  scale,
+  animationSpeed,
+}) => {
   return (
     <motion.svg
       key={id}
@@ -26,7 +35,7 @@ const Sparkle: React.FC<Sparkle> = ({ id, x, y, color, delay, scale }) => {
         scale: [0, scale, 0],
         rotate: [75, 120, 150],
       }}
-      transition={{ duration: 0.8, repeat: Infinity, delay }}
+      transition={{ duration: animationSpeed, repeat: Infinity, delay }}
       width="15"
       height="15"
       viewBox="0 0 23 23"
@@ -82,6 +91,7 @@ interface SparklesTextProps {
     first: string;
     second: string;
   };
+  animationSpeed?: number;
 }
 
 export const SparklesText: React.FC<SparklesTextProps> = ({
@@ -89,6 +99,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
   sparklesCount = 6,
+  animationSpeed = 1.5,
   ...props
 }) => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
@@ -141,7 +152,11 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
     >
       <span className="relative inline-block">
         {sparkles.map((sparkle) => (
-          <Sparkle key={sparkle.id} {...sparkle} />
+          <Sparkle
+            key={sparkle.id}
+            {...sparkle}
+            animationSpeed={animationSpeed}
+          />
         ))}
         <strong>{children}</strong>
       </span>
