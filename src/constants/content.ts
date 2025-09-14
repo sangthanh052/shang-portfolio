@@ -31,8 +31,9 @@ const my_profile: ProfileTypes = {
     ]
   },
   Others: [
-    'Design Patterns', 'Atomic Design', 'Mobile-First UI', 'Lazy loading', 'Memoization',
-    'Figma', 'Zeplin', 'Photoshop', 'Illustrator', 'Canva'
+    'Design Patterns', 'StoryBook', 'Mobile-First UI', 'Lazy loading',
+    'Code splitting', 'Tree-shaking', 'Memoization', 'Accessibility (WCAG compliance)',
+    'Atomic Design', 'Wireframe Design', 'Figma', 'Zeplin', 'Photoshop', 'Canva'
   ]
   
 };`;
