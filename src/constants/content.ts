@@ -21,7 +21,10 @@ const my_profile: ProfileTypes = {
     ],
     Testing: ['Jest', 'Vitest', 'React Testing Library', 'MSW', 'Snapshot Testing'],
     Build_Tools: ['Vite', 'Webpack', 'Babel', 'Gulp', 'Postman'],
-    CICD_Cloud: ['GitHub Actions', 'SFCC Cartridge build & deploy', 'CDN/static assets', 'Cloudflare', 'Vercel', 'Netlify']
+    CICD_Cloud: [
+      'GitHub Actions', 'SFCC Cartridge build & deploy',
+      'CDN/static assets', 'Cloudflare', 'Vercel', 'Netlify'
+    ],
     VersionControl_Workflow: [
       'Git', 'GitHub', 'Bitbucket',
       'Agile/Scrum methodologies', 'Jira'
