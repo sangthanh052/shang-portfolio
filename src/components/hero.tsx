@@ -100,7 +100,7 @@ function Herro({ refs, isActive }: propsType) {
           <Link
             to=""
             target="_blank"
-            className="t5 font-normal text-white px-6 py-3 z-10 relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-linear-to-r from-primary to-primary-foreground focus:ring-0 focus:outline-hidden shadow-lg shadow-primary/40"
+            className="t5 font-normal text-white px-6 py-3 z-10 relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-linear-to-r from-black/10 to-primary-darker/80 focus:ring-0 focus:outline-hidden shadow-lg shadow-primary/20"
           >
             My Resume
           </Link>

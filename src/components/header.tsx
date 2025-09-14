@@ -4,7 +4,7 @@ import { AnimateInView } from "./ui/animate-in-view";
 
 function Header() {
   return (
-    <header className="supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full bg-background/40 backdrop-blur-lg">
+    <header className="supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full glass3d">
       <AnimateInView>
         <div className="hidden lg:block">
           <MenuDesktop />

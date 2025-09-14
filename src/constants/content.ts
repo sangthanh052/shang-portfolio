@@ -4,29 +4,30 @@ export const profileContent = `/*
   Homepage: https://shangdev.id.vn
   Repository: https://github.com/sangthanh052/shangdev-portfolio
 */
-const my_profile: IGoodDeveloper = {
+const my_profile: ProfileTypes = {
   Fullname: 'Nguyen Thanh Sang (Shang)',
   Title: 'Front-End Developer',
-  Yoe: '5+',
+  YOE: '5+',
   Skills: {
-    Languages: ['JavaScript (ES6+)', 'TypeScript', 'Liquid (Shopify)', 'Salesforce (SFRA)'],
+    Languages: ['JavaScript (ES6+)', 'TypeScript', 'Shopify (Liquid)', 'Salesforce (SFRA)'],
     Frontend: [
-      'ReactJS', 'NextJS', 'Redux/Toolkit', 'Context API', 'React Query',
-      'React Hook Form', 'Zod/Yup', 'Lodash', 'Immer'
+      'ReactJS', 'Redux/Toolkit', 'Context API', 'React Query',
+      'Jquery', 'React Hook Form', 'Zod/Yup', 'Lodash', 'Immer'
     ],
-    APIsAndNetworking: ['RESTful APIs', 'Axios', 'Fetch'],
-    UIAndStyling: [
-      'Tailwind CSS', 'Ant Design', ' ShadcnUI', 'MagicUI', 'Framer Motion'
-      'Chakra UI', 'Aceternity UI', 'Bootstrap', 'SCSS Modules', 'Styled Components'
+    APIs_Networking: ['RESTful APIs', 'Axios', 'Fetch'],
+    UI_Styling: [
+      'Tailwind CSS', 'SCSS Modules', ' ShadcnUI', 'MagicUI', 'Framer Motion'
+      'Chakra UI', 'Aceternity UI', 'Bootstrap 4+', 'Styled Components'
     ],
-    Testing: ['Jest', 'Vitest', 'React Testing Library (RTL)', 'MSW', 'Snapshot Testing'],
-    BuildAndTools: ['Vite', 'Webpack', 'Babel'],
-    VersionControlAndWorkflow: [
+    Testing: ['Jest', 'Vitest', 'React Testing Library', 'MSW', 'Snapshot Testing'],
+    Build_Tools: ['Vite', 'Webpack', 'Babel', 'Gulp', 'Postman'],
+    CICD_Cloud: ['GitHub Actions', 'SFCC Cartridge build & deploy', 'CDN/static assets', 'Cloudflare', 'Vercel', 'Netlify']
+    VersionControl_Workflow: [
       'Git', 'GitHub', 'Bitbucket',
       'Agile/Scrum methodologies', 'Jira'
     ]
   },
-  Other: [
+  Others: [
     'Design Patterns', 'Atomic Design', 'Mobile-First UI', 'Lazy loading', 'Memoization',
     'Figma', 'Zeplin', 'Photoshop', 'Illustrator', 'Canva'
   ]

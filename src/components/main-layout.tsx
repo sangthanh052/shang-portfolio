@@ -14,7 +14,7 @@ const MainLayout: React.FC<{ children: ReactNode; hideProgress?: boolean }> = ({
     <RootLayout>
       <Header />
       <main
-        className="relative bg-pane"
+        className="relative bg-pane pb-16"
         style={{ backgroundSize: "55px 45px" }}
       >
         <Surface />

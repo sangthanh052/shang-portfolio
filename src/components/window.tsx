@@ -95,7 +95,7 @@ const Window = () => {
             </TooltipProvider>
           </div>
         </div>
-        <pre className="line-numbers code-editor" data-language="JavaScript">
+        <pre className="line-numbers code-editor !bg-accent" data-language="JavaScript">
           <code className="language-javascript !text-foreground">{code}</code>
         </pre>
       </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer>
-      <div className="mt-16 py-10 space-y-2 text-center text-sm border-t">
+      <div className="py-10 space-y-2 text-center text-sm border-t">
         <p>
           Copyright © 2025{" "}
           <Link to="/" className="hover:underline">
