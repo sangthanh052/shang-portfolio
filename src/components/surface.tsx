@@ -7,7 +7,7 @@ const Surface = () => {
   const y = useMotionValue(0);
 
   const springX = useSpring(x, { stiffness: 100, damping: 15 });
-  const springY = useSpring(y, { stiffness: 100, damping: 15 });
+  const springY = useSpring(y, { stiffness: 100, damping: 15 });  
 
   useEffect(() => {
     const handleResize = () => {
