@@ -86,7 +86,7 @@ function Footer() {
             className="dmca-badge"
           >
             <img
-              src="https://res.cloudinary.com/dnv0qa5lj/image/upload/v1758025356/dmca_protected_sml_120l_lz7i3k.png"
+              src="/assets/images/dmca_protected_sml_120l.png"
               alt="DMCA.com Protection Status"
             />
           </Link>
