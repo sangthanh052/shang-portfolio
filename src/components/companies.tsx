@@ -7,16 +7,16 @@ const Companies = () => {
   const { profile } = useContext(AppContext);
 
   return (
-    <ol className="gap-2 overflow-hidden list-none py-3">
+    <div className="gap-2 overflow-hidden list-none py-3">
       {profile &&
         profile.companies.map((e, index) => (
           <AnimateInView key={index}>
-            <li className="px-6 py-3">
+            <div className="px-6 py-3">
               <Company {...e} />
-            </li>
+            </div>
           </AnimateInView>
         ))}
-    </ol>
+    </div>
   );
 };
 

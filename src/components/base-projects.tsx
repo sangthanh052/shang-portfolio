@@ -22,10 +22,10 @@ const BaseProjects = ({ data }: { data: Side[] | Project[] }) => {
         />
       </Suspense>
 
-      <ol className="gap-2 overflow-hidden list-none py-3">
+      <div className="gap-2 overflow-hidden list-none py-3">
         {data?.map((item, index) => (
           <AnimateInView key={index}>
-            <li className="px-6 py-3 cursor-pointer">
+            <div className="px-6 py-3 cursor-pointer">
               <BaseProjectCard
                 {...item} //spead bung object thanh nhieu props
                 onOpenPhotoLightBox={() => {
@@ -33,10 +33,10 @@ const BaseProjects = ({ data }: { data: Side[] | Project[] }) => {
                   $selectedImage(index);
                 }}
               />
-            </li>
+            </div>
           </AnimateInView>
         ))}
-      </ol>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,9 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ["**/*.pdf"],
+  build: {
+    sourcemap: true,
+  },
   resolve: {
     alias: {
       "@/components": path.resolve(__dirname, "src/components"),

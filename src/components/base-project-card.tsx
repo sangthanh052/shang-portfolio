@@ -66,7 +66,7 @@ const BaseProjectCard = ({
                   >
                     {title}
                     {subtitle && (
-                      <span className="t5 font-light text-muted-foreground">
+                      <span className="t5 text-muted-foreground">
                         ({subtitle})
                       </span>
                     )}

@@ -1,11 +1,11 @@
 export const profileContent = `/*
   Author: Nguyen Thanh Sang (Shang)
   Description: My profile as a Front End Developer
-  Homepage: https://shangdev.id.vn
-  Repository: https://github.com/sangthanh052/shangdev-portfolio
+  Homepage: https://shangdev.id.vn/
+  Repository: https://github.com/sangthanh052/shangdev-portfolio/
 */
 const my_profile: ProfileTypes = {
-  Fullname: 'Nguyen Thanh Sang (Shang)',
+  Fullname: 'Nguyen Thanh Sang',
   Title: 'Front-End Developer',
   YOE: '5+',
   Skills: {
@@ -31,8 +31,9 @@ const my_profile: ProfileTypes = {
     ]
   },
   Others: [
-    'Design Patterns', 'StoryBook', 'Mobile-First UI', 'Lazy loading',
-    'Code splitting', 'Tree-shaking', 'Memoization', 'Accessibility (WCAG compliance)',
+    'Design Patterns', 'StoryBook', 'Mobile-First UI', 
+    'Lazy loading', 'Code splitting', 'Tree-shaking', 'Memoization',
+    'Accessibility compliance (WCAG, ADA)', 'axe DevTools', 'BrowserStack',
     'Atomic Design', 'Wireframe Design', 'Figma', 'Zeplin', 'Photoshop', 'Canva'
   ]
   

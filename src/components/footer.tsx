@@ -81,15 +81,13 @@ function Footer() {
           </Link>
           <Link
             target="_blank"
+            to="https://www.dmca.com/Protection/Status.aspx?ID=a78f2a86-54aa-4212-9008-e3360f10659c&refurl=https://shangdev.id.vn/"
             title="DMCA.com Protection Status"
             className="dmca-badge"
-            to="http://www.dmca.com/Protection/Status.aspx?ID=953673e8-5954-4378-ace0-2538d601e749&refurl=https://duthanhduoc.com/"
           >
             <img
-              src="https://images.dmca.com/Badges/dmca_protected_sml_120c.png?ID=953673e8-5954-4378-ace0-2538d601e749"
+              src="https://res.cloudinary.com/dnv0qa5lj/image/upload/v1758025356/dmca_protected_sml_120l_lz7i3k.png"
               alt="DMCA.com Protection Status"
-              height={25}
-              width={120}
             />
           </Link>
         </div>
